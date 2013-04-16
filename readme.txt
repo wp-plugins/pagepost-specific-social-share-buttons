@@ -16,11 +16,11 @@ Stable tag: 1.0.0
 This plugin allows you to display most used social media share buttons on specific posts or pages.
 
 
-<strong>Usage</strong>
+<strong>Usage:</strong>
 Enable/disable the social media buttons from the page/post editing pages.:
 
 <p>Created By: CompleteWebResources</p>
-<p>Email : info@completewebresources.com/p>
+<p>Email : info@completewebresources.com</p>
 <p>Demo: http://www.completewebresources.com/page-post-specific-social-share-wp-plugin/</p>
 
 * The ability to control the position of the social media buttons to be displayed on the posts or pages.
@@ -56,7 +56,8 @@ An easy to use installation.
 4. Configure the settings through Settings->Page/Post Specific Social Share (seen in a green color) in the admin panel.
 
 == Screenshots ==
-1. Screenshot of settings panel 
+
+1. Screenshot of settings panel.
 2. Option to enable/disable social share buttons for specific page/post
 3. Front end view of the plugin
 

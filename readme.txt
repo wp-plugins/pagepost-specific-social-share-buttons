@@ -1,5 +1,5 @@
 === Page/Post Specific Social Share Buttons ===
-Contributors: Ryan Howard
+Contributors: Ryan Howard, Aboobacker P Ummer
 Plugin Site: http://www.completewebresources.com/page-post-specific-social-share-wp-plugin/
 Donate link: http://www.completewebresources.com/
 Tags: Page/Post Specific Social Share buttons, Page Specific Social Share buttons, Post Specific Social Share buttons

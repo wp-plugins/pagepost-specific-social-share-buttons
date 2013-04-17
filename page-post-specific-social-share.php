@@ -2,7 +2,7 @@
 /*
 Plugin Name: Page/Post Specific Social Share Buttons
 Description: This plugin allows you to display most used social media share buttons on specific posts or pages.
-Author: Ryan Howard
+Author: Ryan Howard, Aboobacker P Ummer
 Author URI: http://www.completewebresources.com/
 Plugin URI: http://www.completewebresources.com/page-post-specific-social-share-wp-plugin/
 Version: 1.0.1

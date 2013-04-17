@@ -75,7 +75,7 @@ function mytheme_save_data($post_id) {
 }
 
 function ppss_twitter_facebook_admin_menu() {
-add_options_page('Page/Post Specific Social Share', '<span style="color:green;font-weight:bold;">Page/Post Specific Social Share</span>', 'manage_options',
+add_options_page('Page/Post Specific Social Share', 'Page/Post Specific Social Share', 'manage_options',
 'ppss-social-share', 'ppss_twitter_facebook_admin_page');
 }
 

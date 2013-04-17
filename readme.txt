@@ -5,7 +5,7 @@ Donate link: http://www.completewebresources.com/
 Tags: Page/Post Specific Social Share buttons, Page Specific Social Share buttons, Post Specific Social Share buttons
 Requires at least: 3.0
 Tested up to: 3.5.1
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 
 == Description ==
 <br />
@@ -53,7 +53,7 @@ An easy to use installation.
 1. Download and unzip the plugin pagepost-specific-social-share-buttons.zip.<br />
 2. Copy the unzipped folder in your Plugins directory under wordpress installation. (wp-content/plugins)<br />
 3. Activate the plugin through the plugin window in the admin panel.<br />
-4. Configure the settings through Settings->Page/Post Specific Social Share (seen in a green color) in the admin panel.
+4. Configure the settings through Settings->Page/Post Specific Social Share in the admin panel.
 
 == Screenshots ==
 
@@ -65,3 +65,6 @@ An easy to use installation.
 
 = 1.0.0 =
 * Initial release
+
+= 1.0.1 =
+* Minor edit

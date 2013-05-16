@@ -5,7 +5,7 @@ Donate link: http://www.completewebresources.com/
 Tags: Page/Post Specific Social Share buttons, Page Specific Social Share buttons, Post Specific Social Share buttons
 Requires at least: 3.0
 Tested up to: 3.5.1
-Stable tag: 1.1
+Stable tag: 1.1.1
 
 == Description ==
 <br />

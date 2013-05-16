@@ -175,6 +175,8 @@ $show_in = array(
 	
 	$enablerColor = $enabler ? '#0B932D' : '#ff0000';
 	
+	$toolTip = $enabler ? '<small style="color:#0E4A93;">(Will turn on the social shares globally. You can toggle on or off individually at the post/page edit level).</small>' : '<small style="color:#0E4A93;">(Will turn off the social shares globally).</small>';
+	
 	$out .= '
 	<div class="wrap">
 
@@ -187,9 +189,9 @@ $show_in = array(
 	<div class="inside">
 	<table>
 
-	<tr><td style="padding:15px 0 20px 0; font-weight:bold; font-size:15px; color:'.$enablerColor.'" valign="top">'.__("Enable share buttons", 'menu-test' ).':</td>
+	<tr><td style="padding:15px 0 20px 0; font-weight:bold; font-size:15px; color:'.$enablerColor.'" valign="top">'.__("Enable Share Buttons", 'menu-test' ).':</td>
 	<td style="padding:15px 0 20px 0;">
-		<input type="checkbox" name="ppss_social_share_enabler" '.$enabler.' />
+		<input type="checkbox" name="ppss_social_share_enabler" '.$enabler.' /> <br />'.$toolTip.'
 	</td></tr>
 
 	<tr><td valign="top" style="width:180px;">'.__("Active share buttons", 'menu-test' ).':</td>

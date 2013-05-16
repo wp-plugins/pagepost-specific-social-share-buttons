@@ -48,9 +48,9 @@ function ppss_twitter_facebook($content, $filter)
 		$last_execution = 'the_excerpt';
 		return the_excerpt();
 	}
-	if ($filter=='the_excerpt' and $last_execution=='the_excerpt') {
-		add_filter('the_content', 'ppss_twitter_facebook_contents');
-	}
+if ($filter=='the_excerpt' and $last_execution=='the_excerpt') {
+	add_filter('the_content', 'ppss_twitter_facebook_contents');
+}
   
   $option = ppss_social_share_get_options_stored();
   $custom_disable = get_post_custom_values('disable_social_share');
@@ -229,9 +229,13 @@ function ppss_social_share($source)
 
 	global $post;
 	$ppss_displayer = get_post_meta($post->ID, 'ab_checkbox', true);
+	
+	$enabler = $option['enabler'];
 
-	if($ppss_displayer) {
-			
+if($enabler) { // global enable check
+	
+	if(!$ppss_displayer) {
+		
 	if (($option['position'] == 'below') || ($option['position'] == 'above') || ($option['position'] == 'both'))
 	{
 
@@ -294,6 +298,8 @@ function ppss_social_share($source)
 	}
 	
 	}
+} 
+
 }
 
 function ppss_fb_like_thumbnails()

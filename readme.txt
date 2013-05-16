@@ -5,7 +5,7 @@ Donate link: http://www.completewebresources.com/
 Tags: Page/Post Specific Social Share buttons, Page Specific Social Share buttons, Post Specific Social Share buttons
 Requires at least: 3.0
 Tested up to: 3.5.1
-Stable tag: 1.0.1
+Stable tag: 1.1
 
 == Description ==
 <br />
@@ -23,15 +23,23 @@ Enable/disable the social media buttons from the page/post editing pages.:
 <p>Email : info@completewebresources.com</p>
 <p>Demo: http://www.completewebresources.com/page-post-specific-social-share-wp-plugin/</p>
 
+* The ability to enable/disable social media buttons for entire website. Default: enabled
+
+* The ability to display/hide social media buttons on specific posts or pages.
+
 * The ability to control the position of the social media buttons to be displayed on the posts or pages.
 
 * An easy to use admin panel where you can set different types of border styles with or without background colors.
 
-* Javascript is loaded to the footer to avoid most of the conflicts caused by other plugins. You can also choose the scripts to be loaded in the header if you wish.
+* Javascript is loaded to the footer to avoid most of the conflicts caused by other plugins. You can also choose the 
+
+scripts to be loaded in the header if you wish.
 
 * Option to display on home page, static pages, category, tag, archive pages etc. 
 
-* Special metabox on the page or post editing windows to control the display of social buttons on the specific post/page.
+* Special metabox on the page or post editing windows to control the display of social buttons on the specific 
+
+post/page.
 
 * Facebook Like thumbnail will now display thumbnail specific to the post or page.
 
@@ -41,9 +49,13 @@ Enable/disable the social media buttons from the page/post editing pages.:
 
 * Option to disable on Mobile Devices (iPad, iPhone, Blackberry, Nokia, Android, Opera Mini)
 
-* Advanced image search for Pinterest sharing. (searches post thumbnail, then attached image to post and lastly any image inserted in the post content (picks up first image found).
+* Advanced image search for Pinterest sharing. (searches post thumbnail, then attached image to post and lastly any 
 
-* Last but not least, option to add your own custom code to display additional buttons along with the default available social media buttons.
+image inserted in the post content (picks up first image found).
+
+* Last but not least, option to add your own custom code to display additional buttons along with the default available 
+
+social media buttons.
 
 
 == Installation ==
@@ -68,3 +80,7 @@ An easy to use installation.
 
 = 1.0.1 =
 * Minor edit
+
+= 1.1 =
+* Added a global enable/disable option
+* Hide social share buttons on specific pages/posts

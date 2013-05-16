@@ -32,7 +32,7 @@ function ppss_show_box() {
     foreach ($meta_box['fields'] as $field) {
         $meta = get_post_meta($post->ID, $field['id'], true);
         echo '<tr>',
-                '<th style=""><label for="', $field['id'], '">Display social share buttons on this post / page:</label></th>',
+                '<th style=""><label for="', $field['id'], '">Hide social share buttons on this post / page:</label></th>',
                 '<td>';
 	                echo '<input type="checkbox" value="',$field['value'],'" name="', $field['id'], '" id="', $field['id'], '"', $meta ? ' checked="checked"' : '', ' />';
         echo     '<td>',
@@ -121,13 +121,13 @@ $show_in = array(
 		}
 		$option['position'] = esc_html($_POST['ppss_social_share_position']);
 		$option['border'] = esc_html($_POST['ppss_social_share_border']);
-		
 		$option['bkcolor'] = (isset($_POST['ppss_social_share_background_color']) and $_POST['ppss_social_share_background_color']=='on') ? true : false;
+		
+		$option['enabler'] = (isset($_POST['ppss_social_share_enabler']) and $_POST['ppss_social_share_enabler']=='on') ? true : false;
 		
 		$option['bkcolor_value'] = esc_html($_POST['ppss_social_share_bkcolor_value']);
 		$option['jsload'] = (isset($_POST['ppss_social_share_javascript_load']) and $_POST['ppss_social_share_javascript_load']=='on') ? true : false;
 		$option['mobdev'] = (isset($_POST['ppss_social_share_mobile_device']) and $_POST['ppss_social_share_mobile_device']=='on') ? true : false;
-
 		$option['twitter_id'] = esc_html($_POST['ppss_social_share_twitter_id']);
 		$option['custom_code'] = stripslashes($_POST['ppss_social_share_custom_code']);
 		$option['left_space'] = esc_html($_POST['ppss_social_share_left_space']);
@@ -162,6 +162,9 @@ $show_in = array(
 	$sel_absolute = ($option['float_position']=='absolute') ? 'selected="selected"' : '';
 	
 	$bkcolor = ($option['bkcolor']) ? 'checked="checked"' : '';
+	
+	$enabler = ($option['enabler']) ? 'checked="checked"' : '';
+	
 	$jsload =  ($option['jsload']) ? 'checked="checked"' : '';
 	$mobdev =  ($option['mobdev']) ? 'checked="checked"' : '';
 	$auto =    ($option['auto']) ? 'checked="checked"' : '';
@@ -169,6 +172,8 @@ $show_in = array(
 	$twitter_count = ($option['twitter_count']) ? 'checked="checked"' : '';
 	$linkedin_count = ($option['linkedin_count']) ? 'checked="checked"' : '';
 	$pinterest_count = ($option['pinterest_count']) ? 'checked="checked"' : '';
+	
+	$enablerColor = $enabler ? '#0B932D' : '#ff0000';
 	
 	$out .= '
 	<div class="wrap">
@@ -181,7 +186,12 @@ $show_in = array(
 	<h3 style="background:#E1F4A2;">'.__("Page/Post Specific Social Share Options", 'menu-test' ).'</h3>
 	<div class="inside">
 	<table>
-	
+
+	<tr><td style="padding:15px 0 20px 0; font-weight:bold; font-size:15px; color:'.$enablerColor.'" valign="top">'.__("Enable share buttons", 'menu-test' ).':</td>
+	<td style="padding:15px 0 20px 0;">
+		<input type="checkbox" name="ppss_social_share_enabler" '.$enabler.' />
+	</td></tr>
+
 	<tr><td valign="top" style="width:180px;">'.__("Active share buttons", 'menu-test' ).':</td>
 	<td style="padding-bottom:30px;">';
 	
@@ -411,6 +421,7 @@ function ppss_social_share_get_options_default ($position='above', $border='none
 	$option['position'] = $position;
 	$option['border'] = $border;
 	$option['bkcolor'] = true;
+	$option['enabler'] = true;
 	$option['bkcolor_value'] = $color;
 	$option['jsload'] = true;
 	$option['mobdev'] = true;

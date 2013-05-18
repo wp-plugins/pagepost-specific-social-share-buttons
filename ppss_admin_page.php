@@ -1,4 +1,7 @@
 <?php
+$option = ppss_social_share_get_options_stored();
+$enabler = $option['enabler'];
+	
 $prefix = 'ab_';
 $meta_box = array(
     'id' => 'ppss-meta-box',
@@ -24,15 +27,18 @@ function ppss_add_box() {
 	add_meta_box($meta_box['id'], '<span style="color:#720DAA;">'.$meta_box['title'].'</span>', 'ppss_show_box', 'page', $meta_box['context'], $meta_box['priority']);
 }
 function ppss_show_box() {
+	global $enabler;
+    $actionTxt = $enabler ? 'Hide' : 'Show';
+
     global $meta_box, $post;
     echo '<input type="hidden" name="mytheme_meta_box_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
-
+			
     echo '<table class="form-table">';
 
     foreach ($meta_box['fields'] as $field) {
-        $meta = get_post_meta($post->ID, $field['id'], true);
+        $meta = get_post_meta($post->ID, $field['id'], true); // Reference: $field['id'] = ab_checkbox;
         echo '<tr>',
-                '<th style=""><label for="', $field['id'], '">Hide social share buttons on this post / page:</label></th>',
+                '<th style=""><label for="', $field['id'], '">'.$actionTxt.' social share buttons on this post / page:</label></th>',
                 '<td>';
 	                echo '<input type="checkbox" value="',$field['value'],'" name="', $field['id'], '" id="', $field['id'], '"', $meta ? ' checked="checked"' : '', ' />';
         echo     '<td>',
@@ -175,8 +181,6 @@ $show_in = array(
 	
 	$enablerColor = $enabler ? '#0B932D' : '#ff0000';
 	
-	$toolTip = $enabler ? '<small style="color:#0E4A93;">(Will turn on the social shares globally. You can toggle on or off individually at the post/page edit level).</small>' : '<small style="color:#0E4A93;">(Will turn off the social shares globally).</small>';
-	
 	$out .= '
 	<div class="wrap">
 
@@ -191,7 +195,7 @@ $show_in = array(
 
 	<tr><td style="padding:15px 0 20px 0; font-weight:bold; font-size:15px; color:'.$enablerColor.'" valign="top">'.__("Enable Share Buttons", 'menu-test' ).':</td>
 	<td style="padding:15px 0 20px 0;">
-		<input type="checkbox" name="ppss_social_share_enabler" '.$enabler.' /> <br />'.$toolTip.'
+		<input type="checkbox" name="ppss_social_share_enabler" '.$enabler.' /> <br /><small style="color:#0E4A93;">(Will turn on the social shares globally. You can toggle on or off individually at the post/page edit level).</small>
 	</td></tr>
 
 	<tr><td valign="top" style="width:180px;">'.__("Active share buttons", 'menu-test' ).':</td>

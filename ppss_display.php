@@ -228,10 +228,10 @@ function ppss_social_share($source)
 	}
 
 	global $post;
-	$ppss_displayer = get_post_meta($post->ID, 'ab_checkbox', true);
 	
 	$enabler = $option['enabler'];
-
+	$ppss_displayer = get_post_meta($post->ID, 'ab_checkbox', true);
+	
 if($enabler) { // global enable check
 	
 	if(!$ppss_displayer) {
@@ -299,6 +299,73 @@ if($enabler) { // global enable check
 	
 	}
 } 
+
+else { // if global option is OFF
+	if($ppss_displayer) {
+				
+	if (($option['position'] == 'below') || ($option['position'] == 'above') || ($option['position'] == 'both'))
+	{
+
+		$output = '<div class="bottomcontainerBox" style="' .$border. $bkcolor. '">';
+		if ($option['active_buttons']['facebook_like']==true) {
+		$output .= '
+			<div style="float:left; width:' .$option['facebook_like_width']. 'px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;">
+			<iframe src="http'.(is_ssl()?'s':'').'://www.facebook.com/plugins/like.php?href=' . urlencode($post_link) . '&amp;layout=button_count&amp;show_faces=false&amp;width='.$option['facebook_like_width'].'&amp;action=like&amp;font=verdana&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:'.$option['facebook_like_width'].'px; height:21px;"></iframe></div>';
+		}
+
+		if ($option['active_buttons']['Google_plusone']==true) {
+		$data_count = ($option['google_count']) ? '' : 'count="false"';
+		$output .= '
+			<div style="float:left; width:' .$option['google_width']. 'px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;">
+			<g:plusone size="medium" href="' . $post_link . '"'.$data_count.'></g:plusone>
+			</div>';
+		}
+		
+		if ($option['active_buttons']['twitter']==true) {
+		$data_count = ($option['twitter_count']) ? 'horizontal' : 'none';
+		if ($option['twitter_id'] != ''){
+		$output .= '
+			<div style="float:left; width:' .$option['twitter_width']. 'px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;">
+			<a href="http'.(is_ssl()?'s':'').'://twitter.com/share" class="twitter-share-button" data-url="'. $post_link .'"  data-text="'. $post_title . '" data-count="'.$data_count.'" data-via="'. $option['twitter_id'] . '"></a>
+			</div>';
+		} else {
+		$output .= '
+			<div style="float:left; width:' .$option['twitter_width']. 'px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;">
+			<a href="http'.(is_ssl()?'s':'').'://twitter.com/share" class="twitter-share-button" data-url="'. $post_link .'"  data-text="'. $post_title . '" data-count="'.$data_count.'"></a>
+			</div>';
+		}
+		}
+		if ($option['active_buttons']['linkedin']==true) {
+		$counter = ($option['linkedin_count']) ? 'right' : '';
+		$output .= '<div style="float:left; width:' .$option['linkedin_width']. 'px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;"><script type="in/share" data-url="' . $post_link . '" data-counter="' .$counter. '"></script></div>';
+		}
+		if ($option['active_buttons']['pinterest']==true) {
+		$post_image = tf_get_image();
+		$counter = ($option['pinterest_count']) ? 'horizontal' : 'none';
+		$output .= '<div style="float:left; width:' .$option['pinterest_width']. 'px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;"><a href="http'.(is_ssl()?'s':'').'://pinterest.com/pin/create/button/?url=' . $post_link . '&media=' . $post_image . '" class="pin-it-button" count-layout="' .$counter.'"></a></div>';
+		}
+		if ($option['active_buttons']['stumbleupon']==true) {
+		$output .= '			
+			<div style="float:left; width:' .$option['stumbleupon_width']. 'px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;"><script src="http'.(is_ssl()?'s':'').'://www.stumbleupon.com/hostedbadge.php?s=1&amp;r='.$post_link.'"></script></div>';
+		}
+		
+		if ($option['custom_code']==true) {
+		$output .= '<div style="float:left;padding-right:10px; margin:4px 4px 4px 4px;height:30px;">';
+		
+		$output .= $option['custom_code'];
+		
+		$output .='</div>';
+		}
+
+		$output .= '			
+			</div><div style="clear:both"></div><div style="padding-bottom:4px;"></div>';
+			
+		return $output;
+
+	}
+	
+	}
+}
 
 }
 

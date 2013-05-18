@@ -5,7 +5,7 @@ Donate link: http://www.completewebresources.com/
 Tags: Page/Post Specific Social Share buttons, Page Specific Social Share buttons, Post Specific Social Share buttons
 Requires at least: 3.0
 Tested up to: 3.5.1
-Stable tag: 1.1.1
+Stable tag: 2.0
 
 == Description ==
 <br />
@@ -84,3 +84,7 @@ An easy to use installation.
 = 1.1 =
 * Added a global enable/disable option
 * Hide social share buttons on specific pages/posts
+
+= 2.0 =
+* Added option to display/hide social media for posts/pages individually with respect to the global social media ON/OFF.
+* More stable version

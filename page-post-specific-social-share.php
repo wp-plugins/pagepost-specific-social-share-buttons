@@ -5,7 +5,7 @@ Description: This plugin allows you to display most used social media share butt
 Author: Ryan Howard, Aboobacker P
 Author URI: http://www.completewebresources.com/
 Plugin URI: http://www.completewebresources.com/page-post-specific-social-share-wp-plugin/
-Version: 2.0
+Version: 2.1
 License: GPL
 */
 
